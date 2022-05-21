@@ -20,4 +20,6 @@
         </div>
     </div>
 </div>
+<example-component class="mt-5"></example-component>
+
 @endsection

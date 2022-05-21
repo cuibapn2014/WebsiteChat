@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\MessageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,12 +16,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('client.home');
 });
-<<<<<<< HEAD
+
+Route::post('/send-message/{idConversation}', [MessageController::class, 'sendMessage'])->name('sendMessage');
+Route::get('/messages/{id}', [MessageController::class, 'getMessByConvId'])->name('fetchMessage');
+
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-=======
->>>>>>> 9c9436b6500099f1fb2f3eb4d621af5461035531

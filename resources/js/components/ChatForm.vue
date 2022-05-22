@@ -36,11 +36,12 @@ export default {
   },
   methods: {
     sendMessage() {
-      this.$emit('messagesent', {
-        user: this.user,
-        message: this.newMessage,
-      });
-      this.newMessage = "";
+        this.$emit("messagesent", {
+          user: this.user,
+          message: this.newMessage,
+        });
+        this.newMessage = "";
+      
     },
     handlePressKey() {
       this.sendMessage();

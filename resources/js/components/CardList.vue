@@ -1,6 +1,6 @@
 <template>
     <div class="flex flex-row border-b-2 py-2 border-slate-100 justify-between">
-        <img class="h-12 w-12 object-cover rounded-full" :src="user.image" alt="user">
+        <img class="h-12 w-12 object-cover rounded-full" :src="user.image ? user.image : '/images/user.jpg'" alt="user">
         <div class="flex flex-col box__info grow px-2">
             <h5 class="text-lg w-full">{{user.name}}</h5>
         </div>

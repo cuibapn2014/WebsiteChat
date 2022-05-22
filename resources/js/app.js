@@ -56,20 +56,22 @@ const app = new Vue({
         },
 
         async addMessage(message) {
-            const newMess = {
-                ...message,
-                created_at: new Date().toISOString()
-            }
-
-            this.messages.push(newMess)
-
-            await axios({
-                url: '/send-message/1',
-                method: 'POST',
-                data: {
-                    message: message.message
+            if (message.message !== '') {
+                const newMess = await {
+                    ...message,
+                    created_at: new Date().toISOString()
                 }
-            }).then(res => console.log(res))
+
+                this.messages.push(newMess)
+
+                await axios({
+                    url: '/send-message/1',
+                    method: 'POST',
+                    data: {
+                        message: message.message
+                    }
+                })
+            }
         },
 
         getMessage() {
@@ -79,7 +81,6 @@ const app = new Vue({
                         ...e.message,
                         user: e.user
                     }
-                    console.log(newMess);
                     this.messages.push(newMess);
                 });
         }

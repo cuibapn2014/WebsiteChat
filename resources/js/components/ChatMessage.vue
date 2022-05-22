@@ -65,17 +65,8 @@ export default {
     user: Object,
     messages: Array,
   },
-  // created(){
-  //   this.fetchMessage();
-  // },
   updated() {
     this.scrollBottom();
-  },
-  data() {
-    return {
-      // messages: null,
-      isLoaded: false,
-    };
   },
   methods: {
     scrollBottom() {
